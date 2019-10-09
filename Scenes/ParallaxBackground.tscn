@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://GFX/Background/bg_layer1.png" type="Texture" id=1]
+[ext_resource path="res://GFX/Background/bg_layer2.png" type="Texture" id=2]
+[ext_resource path="res://GFX/Background/bg_layer3.png" type="Texture" id=3]
+[ext_resource path="res://GFX/Background/bg_layer4.png" type="Texture" id=4]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+scroll_base_scale = Vector2( 0.7, 0 )
+
+[node name="Sky" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2( 1050, 0 )
+
+[node name="Sprite" type="Sprite" parent="Sky"]
+position = Vector2( 2.19708, 1.44202 )
+scale = Vector2( 0.635316, 0.292503 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Cloud" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.1, 1 )
+motion_mirroring = Vector2( 1020, 0 )
+
+[node name="Sprite2" type="Sprite" parent="Cloud"]
+position = Vector2( 510.693, 300.698 )
+scale = Vector2( 0.498204, 0.292 )
+texture = ExtResource( 2 )
+
+[node name="Far_floor" type="ParallaxLayer" parent="."]
+modulate = Color( 0.694118, 0.988235, 0.886275, 1 )
+motion_scale = Vector2( 0.2, 1 )
+motion_mirroring = Vector2( 1020, 0 )
+
+[node name="Sprite3" type="Sprite" parent="Far_floor"]
+position = Vector2( 511.662, 300.658 )
+scale = Vector2( 0.499449, 0.293051 )
+texture = ExtResource( 3 )
+
+[node name="Floor" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2( 1020, 0 )
+
+[node name="bg_layer4" type="Sprite" parent="Floor"]
+modulate = Color( 0.388235, 0.756863, 0.384314, 1 )
+position = Vector2( 511.306, 301.43 )
+scale = Vector2( 0.499748, 0.293041 )
+texture = ExtResource( 4 )

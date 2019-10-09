@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Font/Pumpkin/Pumpkin.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://GUI/Untitled-2.png" type="Texture" id=2]
+[ext_resource path="res://Code&Token/Buttonplay.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 150
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+font_data = ExtResource( 1 )
+
+[node name="end" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1114.0
+margin_bottom = 754.0
+color = Color( 0.65098, 0.745098, 0.992157, 1 )
+
+[node name="Label" type="Label" parent="ColorRect"]
+margin_left = 128.912
+margin_top = 100.674
+margin_right = 890.912
+margin_bottom = 309.674
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 0.870588, 0.427451, 1 )
+custom_colors/font_color_shadow = Color( 0.913725, 0.576471, 0.282353, 1 )
+custom_constants/shadow_offset_x = 10
+text = "Clear !!!"
+
+[node name="Sprite" type="Sprite" parent="ColorRect/Label"]
+position = Vector2( 345.147, 332.679 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 2 )
+
+[node name="Button" type="Button" parent="ColorRect/Label"]
+margin_left = 247.981
+margin_top = 302.052
+margin_right = 447.981
+margin_bottom = 361.052
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.996078, 0.47451, 0.47451, 1 )
+custom_colors/font_color_hover = Color( 0.6, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0.396078, 0.356863, 1 )
+text = "Again"
+flat = true
+script = ExtResource( 3 )
+[connection signal="pressed" from="ColorRect/Label/Button" to="ColorRect/Label/Button" method="_on_Button_pressed"]

@@ -1,0 +1,641 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://Level/LV1.gd" type="Script" id=1]
+[ext_resource path="res://Platfrom/Platform_A.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Platfrom/Platform_B.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Platfrom/Platform_C.tscn" type="PackedScene" id=4]
+[ext_resource path="res://set_tlimap.tres" type="TileSet" id=5]
+[ext_resource path="res://Code&Token/Apple.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Code&Token/Checkpoint.tscn" type="PackedScene" id=7]
+[ext_resource path="res://SFX/Chiptune_Adventures_1.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Enviroment/1x/Asset 13.png" type="Texture" id=9]
+[ext_resource path="res://Enviroment/1x/Asset 14.png" type="Texture" id=10]
+[ext_resource path="res://Enviroment/1x/Asset 2.png" type="Texture" id=11]
+[ext_resource path="res://Enviroment/1x/Asset 3.png" type="Texture" id=12]
+[ext_resource path="res://Enviroment/1x/Asset 4.png" type="Texture" id=13]
+[ext_resource path="res://Enviroment/1x/Asset 8.png" type="Texture" id=14]
+[ext_resource path="res://Enviroment/1x/Asset 10.png" type="Texture" id=15]
+[ext_resource path="res://Enviroment/1x/Asset 15.png" type="Texture" id=16]
+[ext_resource path="res://Enviroment/1x/Asset 7.png" type="Texture" id=17]
+[ext_resource path="res://Enviroment/1x/Asset 1.png" type="Texture" id=18]
+[ext_resource path="res://Enviroment/2x/Asset 1.png" type="Texture" id=19]
+[ext_resource path="res://Enviroment/2x/Asset 2.png" type="Texture" id=20]
+[ext_resource path="res://Enviroment/2x/Asset 7.png" type="Texture" id=21]
+[ext_resource path="res://Enviroment/2x/Asset 8.png" type="Texture" id=22]
+[ext_resource path="res://Enviroment/2x/Asset 14.png" type="Texture" id=23]
+[ext_resource path="res://Enviroment/2x/Asset 13.png" type="Texture" id=24]
+[ext_resource path="res://Enviroment/2x/Asset 11.png" type="Texture" id=25]
+[ext_resource path="res://Enviroment/2x/Asset 15.png" type="Texture" id=26]
+[ext_resource path="res://Enviroment/2x/Asset 10.png" type="Texture" id=27]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=28]
+
+[node name="LV1" type="Node2D"]
+position = Vector2( 83.5092, 155.327 )
+script = ExtResource( 1 )
+
+[node name="moving_platform" parent="." instance=ExtResource( 2 )]
+position = Vector2( 49.209, 250.527 )
+scale = Vector2( 0.5, 0.5 )
+motion = Vector2( 50, 0 )
+cycle = 10.0
+
+[node name="moving_platform2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 338.151, 250.527 )
+scale = Vector2( 0.5, 0.5 )
+motion = Vector2( 0, 50 )
+cycle = 10.0
+
+[node name="moving_platform3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 690.559, 228.815 )
+motion = Vector2( 200, 0 )
+cycle = 10.0
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 128, 128 )
+format = 1
+tile_data = PoolIntArray( 196696, 33, 0, 327679, 27, 0, 262144, 25, 0, 262145, 25, 0, 393215, 27, 0, 327680, 25, 0, 327681, 25, 0, 327766, 20, 0, 327767, 536870931, 0, 327768, 536870932, 0, 458751, 27, 0, 393216, 25, 0, 393217, 25, 0, 393301, 20, 0, 393302, 536870937, 0, 393303, 536870937, 0, 393304, 536870937, 0, 393305, 536870932, 0, 524287, 27, 0, 458752, 25, 0, 458753, 25, 0, 458837, 27, 0, 458838, 536870937, 0, 458839, 536870937, 0, 458840, 536870937, 0, 458841, 536870937, 0, 589823, 27, 0, 524288, 25, 0, 524289, 25, 0, 524373, 27, 0, 524374, 536870937, 0, 524375, 536870937, 0, 524376, 536870937, 0, 524377, 536870937, 0, 655359, 27, 0, 589824, 25, 0, 589825, 25, 0, 589909, 27, 0, 589910, 536870937, 0, 589911, 536870937, 0, 589912, 536870937, 0, 589913, 536870937, 0, 720895, 27, 0, 655360, 25, 0, 655361, 25, 0, 655445, 27, 0, 655446, 536870937, 0, 655447, 536870937, 0, 655448, 536870937, 0, 655449, 536870937, 0, 786431, 27, 0, 720896, 25, 0, 720897, 25, 0, 720981, 27, 0, 720982, 536870937, 0, 720983, 536870937, 0, 720984, 536870937, 0, 720985, 536870937, 0, 851967, 27, 0, 786432, 25, 0, 786433, 25, 0, 786516, 1, 0, 786517, 25, 0, 786518, 536870937, 0, 786519, 536870937, 0, 786520, 536870937, 0, 786521, 536870937, 0, 917503, 27, 0, 851968, 25, 0, 851969, 25, 0, 852053, 27, 0, 852054, 536870937, 0, 852055, 536870937, 0, 852056, 536870937, 0, 852057, 536870937, 0, 983039, 27, 0, 917504, 25, 0, 917505, 25, 0, 917560, 20, 0, 917561, 21, 0, 917562, 21, 0, 917563, 536870932, 0, 917566, 20, 0, 917567, 19, 0, 917568, 19, 0, 917569, 19, 0, 917570, 536870919, 0, 917589, 27, 0, 917590, 536870937, 0, 917591, 536870937, 0, 917592, 536870937, 0, 917593, 536870937, 0, 1048575, 27, 0, 983040, 25, 0, 983041, 25, 0, 983042, 31, 0, 983060, 20, 0, 983061, 18, 0, 983062, 18, 0, 983063, 18, 0, 983064, 18, 0, 983065, 18, 0, 983066, 536870932, 0, 983096, 27, 0, 983097, 25, 0, 983098, 25, 0, 983099, 536870939, 0, 983102, 27, 0, 983103, 25, 0, 983104, 25, 0, 983105, 536870937, 0, 983106, 9, 0, 983107, 536870919, 0, 983125, 27, 0, 983126, 536870937, 0, 983127, 536870937, 0, 983128, 536870937, 0, 983129, 536870937, 0, 1114111, 27, 0, 1048576, 25, 0, 1048577, 25, 0, 1048595, 20, 0, 1048596, 25, 0, 1048597, 25, 0, 1048598, 25, 0, 1048599, 25, 0, 1048600, 25, 0, 1048601, 25, 0, 1048602, 536870939, 0, 1048632, 27, 0, 1048633, 25, 0, 1048634, 25, 0, 1048635, 536870939, 0, 1048638, 27, 0, 1048639, 536870937, 0, 1048640, 536870937, 0, 1048641, 536870937, 0, 1048642, 536870937, 0, 1048643, 9, 0, 1048644, 536870919, 0, 1048660, 1, 0, 1048661, 25, 0, 1048662, 536870937, 0, 1048663, 536870937, 0, 1048664, 536870937, 0, 1048665, 536870937, 0, 1179647, 27, 0, 1114112, 25, 0, 1114113, 25, 0, 1114114, 18, 0, 1114115, 18, 0, 1114116, 18, 0, 1114117, 18, 0, 1114118, 18, 0, 1114119, 18, 0, 1114120, 18, 0, 1114121, 18, 0, 1114122, 18, 0, 1114123, 18, 0, 1114124, 18, 0, 1114125, 18, 0, 1114126, 18, 0, 1114127, 18, 0, 1114128, 18, 0, 1114129, 18, 0, 1114130, 18, 0, 1114131, 25, 0, 1114132, 25, 0, 1114133, 25, 0, 1114134, 25, 0, 1114135, 25, 0, 1114136, 25, 0, 1114137, 25, 0, 1114138, 25, 0, 1114139, 18, 0, 1114140, 536870932, 0, 1114142, 20, 0, 1114143, 536870930, 0, 1114144, 18, 0, 1114145, 18, 0, 1114146, 18, 0, 1114147, 18, 0, 1114148, 18, 0, 1114149, 18, 0, 1114150, 18, 0, 1114151, 18, 0, 1114152, 18, 0, 1114153, 18, 0, 1114154, 18, 0, 1114155, 18, 0, 1114156, 18, 0, 1114157, 18, 0, 1114158, 18, 0, 1114159, 18, 0, 1114160, 18, 0, 1114161, 18, 0, 1114162, 18, 0, 1114163, 18, 0, 1114164, 18, 0, 1114165, 18, 0, 1114166, 18, 0, 1114167, 18, 0, 1114168, 25, 0, 1114169, 25, 0, 1114170, 25, 0, 1114171, 536870939, 0, 1114174, 27, 0, 1114175, 536870937, 0, 1114176, 536870937, 0, 1114177, 536870937, 0, 1114178, 536870937, 0, 1114179, 536870937, 0, 1114180, 9, 0, 1114181, 536870919, 0, 1114197, 27, 0, 1114198, 536870937, 0, 1114199, 536870937, 0, 1114200, 536870937, 0, 1114201, 536870937, 0, 1245183, 27, 0, 1179648, 25, 0, 1179649, 25, 0, 1179650, 25, 0, 1179651, 25, 0, 1179652, 25, 0, 1179653, 25, 0, 1179654, 25, 0, 1179655, 25, 0, 1179656, 25, 0, 1179657, 25, 0, 1179658, 25, 0, 1179659, 25, 0, 1179660, 25, 0, 1179661, 25, 0, 1179662, 25, 0, 1179663, 25, 0, 1179664, 25, 0, 1179665, 25, 0, 1179666, 25, 0, 1179667, 25, 0, 1179668, 25, 0, 1179669, 25, 0, 1179670, 25, 0, 1179671, 25, 0, 1179672, 25, 0, 1179673, 25, 0, 1179674, 25, 0, 1179675, 25, 0, 1179676, 536870939, 0, 1179678, 27, 0, 1179679, 25, 0, 1179680, 25, 0, 1179681, 25, 0, 1179682, 25, 0, 1179683, 25, 0, 1179684, 25, 0, 1179685, 25, 0, 1179686, 25, 0, 1179687, 25, 0, 1179688, 25, 0, 1179689, 25, 0, 1179690, 25, 0, 1179691, 25, 0, 1179692, 25, 0, 1179693, 25, 0, 1179694, 25, 0, 1179695, 25, 0, 1179696, 25, 0, 1179697, 25, 0, 1179698, 25, 0, 1179699, 25, 0, 1179700, 25, 0, 1179701, 25, 0, 1179702, 25, 0, 1179703, 25, 0, 1179704, 25, 0, 1179705, 25, 0, 1179706, 25, 0, 1179707, 536870939, 0, 1179710, 27, 0, 1179711, 536870937, 0, 1179712, 536870937, 0, 1179713, 536870937, 0, 1179714, 536870937, 0, 1179715, 536870937, 0, 1179716, 536870937, 0, 1179717, 9, 0, 1179718, 536870919, 0, 1179733, 27, 0, 1179734, 536870937, 0, 1179735, 536870937, 0, 1179736, 536870937, 0, 1179737, 536870937, 0, 1310719, 25, 0, 1245184, 25, 0, 1245185, 25, 0, 1245186, 25, 0, 1245187, 25, 0, 1245188, 25, 0, 1245189, 25, 0, 1245190, 25, 0, 1245191, 25, 0, 1245192, 25, 0, 1245193, 25, 0, 1245194, 25, 0, 1245195, 25, 0, 1245196, 25, 0, 1245197, 25, 0, 1245198, 25, 0, 1245199, 25, 0, 1245200, 25, 0, 1245201, 25, 0, 1245202, 25, 0, 1245203, 25, 0, 1245204, 25, 0, 1245205, 25, 0, 1245206, 25, 0, 1245207, 25, 0, 1245208, 25, 0, 1245209, 25, 0, 1245210, 25, 0, 1245211, 25, 0, 1245212, 536870939, 0, 1245214, 27, 0, 1245215, 25, 0, 1245216, 25, 0, 1245217, 25, 0, 1245218, 25, 0, 1245219, 25, 0, 1245220, 25, 0, 1245221, 25, 0, 1245222, 25, 0, 1245223, 25, 0, 1245224, 25, 0, 1245225, 25, 0, 1245226, 25, 0, 1245227, 25, 0, 1245228, 25, 0, 1245229, 25, 0, 1245230, 25, 0, 1245231, 25, 0, 1245232, 25, 0, 1245233, 25, 0, 1245234, 25, 0, 1245235, 25, 0, 1245236, 25, 0, 1245237, 25, 0, 1245238, 25, 0, 1245239, 25, 0, 1245240, 25, 0, 1245241, 25, 0, 1245242, 25, 0, 1245243, 536870939, 0, 1245246, 27, 0, 1245247, 536870937, 0, 1245248, 536870937, 0, 1245249, 536870937, 0, 1245250, 536870937, 0, 1245251, 536870937, 0, 1245252, 536870937, 0, 1245253, 536870937, 0, 1245254, 9, 0, 1245255, 536870919, 0, 1245269, 27, 0, 1245270, 536870937, 0, 1245271, 536870937, 0, 1245272, 536870937, 0, 1245273, 536870937, 0, 1376255, 28, 0, 1310720, 25, 0, 1310721, 25, 0, 1310722, 25, 0, 1310723, 25, 0, 1310724, 25, 0, 1310725, 25, 0, 1310726, 25, 0, 1310727, 25, 0, 1310728, 25, 0, 1310729, 25, 0, 1310730, 25, 0, 1310731, 25, 0, 1310732, 25, 0, 1310733, 25, 0, 1310734, 25, 0, 1310735, 25, 0, 1310736, 25, 0, 1310737, 25, 0, 1310738, 25, 0, 1310739, 25, 0, 1310740, 25, 0, 1310741, 25, 0, 1310742, 25, 0, 1310743, 25, 0, 1310744, 25, 0, 1310745, 25, 0, 1310746, 25, 0, 1310747, 25, 0, 1310748, 536870939, 0, 1310750, 27, 0, 1310751, 25, 0, 1310752, 25, 0, 1310753, 25, 0, 1310754, 25, 0, 1310755, 25, 0, 1310756, 25, 0, 1310757, 25, 0, 1310758, 25, 0, 1310759, 25, 0, 1310760, 25, 0, 1310761, 25, 0, 1310762, 25, 0, 1310763, 25, 0, 1310764, 25, 0, 1310765, 25, 0, 1310766, 25, 0, 1310767, 25, 0, 1310768, 25, 0, 1310769, 25, 0, 1310770, 25, 0, 1310771, 25, 0, 1310772, 25, 0, 1310773, 25, 0, 1310774, 25, 0, 1310775, 25, 0, 1310776, 25, 0, 1310777, 25, 0, 1310778, 25, 0, 1310779, 536870939, 0, 1310782, 27, 0, 1310783, 536870937, 0, 1310784, 536870937, 0, 1310785, 536870937, 0, 1310786, 536870937, 0, 1310787, 536870937, 0, 1310788, 536870937, 0, 1310789, 536870937, 0, 1310790, 536870937, 0, 1310791, 9, 0, 1310792, 19, 0, 1310793, 19, 0, 1310794, 19, 0, 1310795, 19, 0, 1310796, 19, 0, 1310797, 19, 0, 1310798, 19, 0, 1310799, 19, 0, 1310800, 19, 0, 1310801, 19, 0, 1310802, 19, 0, 1310803, 19, 0, 1310804, 19, 0, 1310805, 536870937, 0, 1310806, 536870937, 0, 1310807, 536870937, 0, 1310808, 536870937, 0, 1310809, 536870937, 0, 1376318, 27, 0, 1376319, 536870937, 0, 1376320, 536870937, 0, 1376321, 536870937, 0, 1376322, 536870937, 0, 1376323, 536870937, 0, 1376324, 536870937, 0, 1376325, 536870937, 0, 1376326, 536870937, 0, 1376327, 536870937, 0, 1376328, 536870937, 0, 1376329, 536870937, 0, 1376330, 536870937, 0, 1376331, 536870937, 0, 1376332, 536870937, 0, 1376333, 536870937, 0, 1376334, 536870937, 0, 1376335, 536870937, 0, 1376336, 536870937, 0, 1376337, 536870937, 0, 1376338, 536870937, 0, 1376339, 536870937, 0, 1376340, 536870937, 0, 1376341, 536870937, 0, 1376342, 536870937, 0, 1376343, 536870937, 0, 1376344, 536870937, 0, 1376345, 536870937, 0, 1441854, 27, 0, 1441855, 536870937, 0, 1441856, 536870937, 0, 1441857, 536870937, 0, 1441858, 536870937, 0, 1441859, 536870937, 0, 1441860, 536870937, 0, 1441861, 536870937, 0, 1441862, 536870937, 0, 1441863, 536870937, 0, 1441864, 536870937, 0, 1441865, 536870937, 0, 1441866, 536870937, 0, 1441867, 536870937, 0, 1441868, 536870937, 0, 1441869, 536870937, 0, 1441870, 536870937, 0, 1441871, 536870937, 0, 1441872, 536870937, 0, 1441873, 536870937, 0, 1441874, 536870937, 0, 1441875, 536870937, 0, 1441876, 536870937, 0, 1441877, 536870937, 0, 1441878, 536870937, 0, 1441879, 536870937, 0, 1441880, 536870937, 0, 1441881, 536870937, 0, 1507390, 27, 0, 1507391, 536870937, 0, 1507392, 536870937, 0, 1507393, 536870937, 0, 1507394, 536870937, 0, 1507395, 536870937, 0, 1507396, 536870937, 0, 1507397, 536870937, 0, 1507398, 536870937, 0, 1507399, 536870937, 0, 1507400, 536870937, 0, 1507401, 536870937, 0, 1507402, 536870937, 0, 1507403, 536870937, 0, 1507404, 536870937, 0, 1507405, 536870937, 0, 1507406, 536870937, 0, 1507407, 536870937, 0, 1507408, 536870937, 0, 1507409, 536870937, 0, 1507410, 536870937, 0, 1507411, 536870937, 0, 1507412, 536870937, 0, 1507413, 536870937, 0, 1507414, 536870937, 0, 1507415, 536870937, 0, 1507416, 536870937, 0, 1507417, 536870937, 0, 1572926, 27, 0, 1572927, 536870937, 0, 1572928, 536870937, 0, 1572929, 536870937, 0, 1572930, 536870937, 0, 1572931, 536870937, 0, 1572932, 536870937, 0, 1572933, 536870937, 0, 1572934, 536870937, 0, 1572935, 536870937, 0, 1572936, 536870937, 0, 1572937, 536870937, 0, 1572938, 536870937, 0, 1572939, 536870937, 0, 1572940, 536870937, 0, 1572941, 536870937, 0, 1572942, 536870937, 0, 1572943, 536870937, 0, 1572944, 536870937, 0, 1572945, 536870937, 0, 1572946, 536870937, 0, 1572947, 536870937, 0, 1572948, 536870937, 0, 1572949, 536870937, 0, 1572950, 536870937, 0, 1572951, 536870937, 0, 1572952, 536870937, 0, 1572953, 536870937, 0 )
+
+[node name="platform" type="Node" parent="TileMap"]
+editor/display_folded = true
+
+[node name="moving_platform" parent="TileMap/platform" instance=ExtResource( 3 )]
+position = Vector2( 4833.51, 2188.92 )
+scale = Vector2( 1.63, 0.77 )
+
+[node name="moving_platform2" parent="TileMap/platform" instance=ExtResource( 3 )]
+position = Vector2( 6639.34, 2193.35 )
+scale = Vector2( 1.03, 0.77 )
+
+[node name="moving_platform3" parent="TileMap/platform" instance=ExtResource( 3 )]
+position = Vector2( 6980.14, 2042.87 )
+scale = Vector2( 1.03, 0.77 )
+
+[node name="moving_platform4" parent="TileMap/platform" instance=ExtResource( 3 )]
+position = Vector2( 9561.78, 2339.49 )
+scale = Vector2( 1.03, 0.77 )
+motion = Vector2( 150, 0 )
+cycle = 3.0
+
+[node name="moving_platform5" parent="TileMap/platform" instance=ExtResource( 3 )]
+position = Vector2( 10390.8, 2586.12 )
+scale = Vector2( 0.66, 0.77 )
+
+[node name="moving_platform6" parent="TileMap/platform" instance=ExtResource( 3 )]
+position = Vector2( 10682.6, 2430.67 )
+scale = Vector2( 0.66, 0.77 )
+
+[node name="moving_platform7" parent="TileMap/platform" instance=ExtResource( 3 )]
+position = Vector2( 10602.7, 2137.57 )
+scale = Vector2( 0.66, 0.77 )
+
+[node name="moving_platform8" parent="TileMap/platform" instance=ExtResource( 3 )]
+position = Vector2( 10224.5, 1992.71 )
+scale = Vector2( 0.66, 0.77 )
+
+[node name="moving_platform9" parent="TileMap/platform" instance=ExtResource( 3 )]
+position = Vector2( 10590.9, 1836.22 )
+scale = Vector2( 0.66, 0.77 )
+
+[node name="moving_platform10" parent="TileMap/platform" instance=ExtResource( 3 )]
+position = Vector2( 10587.2, 1551.23 )
+scale = Vector2( 0.66, 0.77 )
+
+[node name="moving_platform11" parent="TileMap/platform" instance=ExtResource( 3 )]
+position = Vector2( 10211.5, 1375.42 )
+scale = Vector2( 0.66, 0.77 )
+
+[node name="moving_platform12" parent="TileMap/platform" instance=ExtResource( 3 )]
+position = Vector2( 10524.1, 1227.86 )
+scale = Vector2( 0.66, 0.77 )
+
+[node name="moving_platform13" parent="TileMap/platform" instance=ExtResource( 3 )]
+position = Vector2( 10524.1, 1227.86 )
+scale = Vector2( 0.66, 0.77 )
+
+[node name="moving_platform14" parent="TileMap/platform" instance=ExtResource( 3 )]
+position = Vector2( 10524.1, 1227.86 )
+scale = Vector2( 0.66, 0.77 )
+
+[node name="moving_platform15" parent="TileMap/platform" instance=ExtResource( 3 )]
+position = Vector2( 10770.2, 1038.45 )
+scale = Vector2( 0.66, 0.77 )
+
+[node name="Area2D" parent="TileMap/platform" instance=ExtResource( 6 )]
+
+[node name="item" type="Node" parent="TileMap"]
+editor/display_folded = true
+
+[node name="apple" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 1666.29, 2239.98 )
+
+[node name="apple16" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 4598.25, 2040.25 )
+
+[node name="apple19" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 4839.81, 2037.86 )
+
+[node name="apple2" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 1713.65, 2192.61 )
+
+[node name="apple15" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 4645.62, 1992.88 )
+
+[node name="apple23" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 4887.17, 1990.49 )
+
+[node name="apple3" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 1754.71, 2239.98 )
+
+[node name="apple14" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 4686.67, 2040.25 )
+
+[node name="apple22" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 4928.23, 2037.86 )
+
+[node name="apple4" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 1792.6, 2191.56 )
+
+[node name="apple17" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 4724.56, 1991.83 )
+
+[node name="apple21" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 4966.12, 1989.44 )
+
+[node name="apple5" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 1839.97, 2237.87 )
+
+[node name="apple18" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 4771.93, 2038.15 )
+
+[node name="apple20" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 5013.49, 2035.75 )
+
+[node name="apple6" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 2783.22, 1985.63 )
+
+[node name="apple7" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 2894.94, 1984.4 )
+
+[node name="apple8" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 2993.16, 1981.95 )
+
+[node name="apple9" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 3366.4, 1978.26 )
+
+[node name="apple10" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 3474.44, 1974.58 )
+
+[node name="apple11" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 3546.87, 1894.78 )
+
+[node name="apple12" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 3650, 1849.35 )
+
+[node name="apple13" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 3864.61, 2227.25 )
+
+[node name="apple24" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 4806.92, 1992.87 )
+
+[node name="apple25" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 6627.5, 2080.32 )
+
+[node name="apple26" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 6984.67, 1906.36 )
+
+[node name="apple27" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 7710.55, 1864.07 )
+
+[node name="apple28" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 7765.92, 1808.7 )
+
+[node name="apple29" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 7854.09, 1763.59 )
+
+[node name="apple30" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 7932.01, 1759.49 )
+
+[node name="apple31" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 7997.63, 1806.65 )
+
+[node name="apple32" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 8044.79, 1882.52 )
+
+[node name="apple33" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 9674.46, 2151.8 )
+
+[node name="apple34" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 9700.17, 2214.68 )
+
+[node name="apple35" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 9708.74, 2148.8 )
+
+[node name="apple36" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 9731.75, 2178.89 )
+
+[node name="apple37" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 9695.96, 2179.94 )
+
+[node name="apple38" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 9657.01, 2192.13 )
+
+[node name="apple39" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 9637.76, 2108.65 )
+
+[node name="apple40" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 9680.77, 2109.56 )
+
+[node name="apple41" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 9718.82, 2113.47 )
+
+[node name="apple42" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 9642.43, 2150.61 )
+
+[node name="apple43" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 9742.88, 2147.6 )
+
+[node name="apple44" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 9761.83, 2112.41 )
+
+[node name="apple45" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 9600.32, 2121.79 )
+
+[node name="apple46" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 9606.06, 2079.65 )
+
+[node name="apple47" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 9639.99, 2043.82 )
+
+[node name="apple48" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 9696.85, 2070.89 )
+
+[node name="apple49" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 9745.58, 2038.45 )
+
+[node name="apple50" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 9785.52, 2077.21 )
+
+[node name="apple51" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 9743.78, 2077.21 )
+
+[node name="apple52" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 9653.53, 2077.21 )
+
+[node name="apple53" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 10391.8, 2488.24 )
+
+[node name="apple54" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 10684, 2334.35 )
+
+[node name="apple55" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 10896.4, 2149.29 )
+
+[node name="apple56" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 10600.3, 2040.2 )
+
+[node name="apple57" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 10220.4, 1905.78 )
+
+[node name="apple58" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 10584.7, 1744.1 )
+
+[node name="apple59" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 10896.4, 1633.06 )
+
+[node name="apple60" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 10588.6, 1457.74 )
+
+[node name="apple61" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 10202.9, 1280.47 )
+
+[node name="apple62" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 10520.2, 1131.53 )
+
+[node name="apple63" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 10759.8, 943.748 )
+
+[node name="apple64" parent="TileMap/item" instance=ExtResource( 6 )]
+position = Vector2( 11016.6, 850.934 )
+
+[node name="Checkpoint" parent="." instance=ExtResource( 7 )]
+position = Vector2( 11205.7, 543.488 )
+scale = Vector2( 3, 3 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+autoplay = true
+
+[node name="Prop" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="Asset 13" type="Sprite" parent="Prop"]
+position = Vector2( 383.55, 2171.06 )
+texture = ExtResource( 9 )
+
+[node name="Asset 14" type="Sprite" parent="Prop"]
+position = Vector2( 389.111, 2165.1 )
+texture = ExtResource( 10 )
+
+[node name="Asset 15" type="Sprite" parent="Prop"]
+position = Vector2( 766.004, 2167.8 )
+scale = Vector2( 1.78, 1.45 )
+texture = ExtResource( 9 )
+
+[node name="Asset 2" type="Sprite" parent="Prop"]
+position = Vector2( 1085.34, 2060.25 )
+texture = ExtResource( 11 )
+
+[node name="Asset 3" type="Sprite" parent="Prop"]
+position = Vector2( 1970.51, 2066.57 )
+texture = ExtResource( 12 )
+
+[node name="Asset 5" type="Sprite" parent="Prop"]
+position = Vector2( 2509.55, 2039.21 )
+texture = ExtResource( 13 )
+
+[node name="Asset 8" type="Sprite" parent="Prop"]
+position = Vector2( 2472.5, 2045.86 )
+texture = ExtResource( 14 )
+
+[node name="Asset 10" type="Sprite" parent="Prop"]
+position = Vector2( 2539.95, 2048.71 )
+texture = ExtResource( 15 )
+
+[node name="Asset 16" type="Sprite" parent="Prop"]
+position = Vector2( 2740.49, 1912.26 )
+texture = ExtResource( 16 )
+
+[node name="Asset 17" type="Sprite" parent="Prop"]
+position = Vector2( 2701.35, 1912.92 )
+texture = ExtResource( 16 )
+
+[node name="Asset 18" type="Sprite" parent="Prop"]
+position = Vector2( 2720.59, 1912.92 )
+texture = ExtResource( 16 )
+
+[node name="Asset 19" type="Sprite" parent="Prop"]
+position = Vector2( 2761.72, 1917.56 )
+texture = ExtResource( 16 )
+
+[node name="Asset 20" type="Sprite" parent="Prop"]
+position = Vector2( 2678.13, 1922.21 )
+texture = ExtResource( 16 )
+
+[node name="Asset 21" type="Sprite" parent="Prop"]
+position = Vector2( 2717.93, 1921.55 )
+texture = ExtResource( 16 )
+
+[node name="Asset 22" type="Sprite" parent="Prop"]
+position = Vector2( 2784.94, 1919.56 )
+texture = ExtResource( 16 )
+
+[node name="Asset 23" type="Sprite" parent="Prop"]
+position = Vector2( 2811.48, 1914.91 )
+texture = ExtResource( 16 )
+
+[node name="Asset 24" type="Sprite" parent="Prop"]
+position = Vector2( 2836.02, 1927.52 )
+texture = ExtResource( 16 )
+
+[node name="Asset 25" type="Sprite" parent="Prop"]
+position = Vector2( 2860.57, 1915.58 )
+texture = ExtResource( 16 )
+
+[node name="Asset 26" type="Sprite" parent="Prop"]
+position = Vector2( 2893.08, 1924.2 )
+texture = ExtResource( 16 )
+
+[node name="Asset 11" type="Sprite" parent="Prop"]
+position = Vector2( 2802.97, 1923.6 )
+texture = ExtResource( 15 )
+
+[node name="Asset 12" type="Sprite" parent="Prop"]
+position = Vector2( 2738.62, 1921.15 )
+texture = ExtResource( 15 )
+
+[node name="Asset 6" type="Sprite" parent="Prop"]
+position = Vector2( 3228.1, 1799.68 )
+texture = ExtResource( 11 )
+
+[node name="Asset 7" type="Sprite" parent="Prop"]
+position = Vector2( 3484.04, 2166.44 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 17 )
+
+[node name="Asset 9" type="Sprite" parent="Prop"]
+position = Vector2( 3510.21, 2170.99 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 17 )
+
+[node name="Asset 27" type="Sprite" parent="Prop"]
+position = Vector2( 3536.37, 2159.61 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 17 )
+
+[node name="Asset 28" type="Sprite" parent="Prop"]
+position = Vector2( 3543.2, 2170.42 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 17 )
+
+[node name="Asset 29" type="Sprite" parent="Prop"]
+position = Vector2( 3581.31, 2168.14 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 17 )
+
+[node name="Asset 30" type="Sprite" parent="Prop"]
+position = Vector2( 3610.32, 2167.58 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 17 )
+
+[node name="Asset 1" type="Sprite" parent="Prop"]
+position = Vector2( 4513.08, 1932.54 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 18 )
+
+[node name="Asset 31" type="Sprite" parent="Prop"]
+position = Vector2( 4441.02, 2168.12 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 17 )
+
+[node name="Asset 32" type="Sprite" parent="Prop"]
+position = Vector2( 3575.62, 2169.85 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 17 )
+
+[node name="Asset 33" type="Sprite" parent="Prop"]
+position = Vector2( 3644.06, 2156.67 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 16 )
+
+[node name="Asset 34" type="Sprite" parent="Prop"]
+position = Vector2( 3497.31, 2163.92 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 15 )
+
+[node name="Asset 35" type="Sprite" parent="Prop"]
+position = Vector2( 4491.11, 2180.9 )
+texture = ExtResource( 14 )
+
+[node name="Asset 36" type="Sprite" parent="Prop"]
+position = Vector2( 4575.41, 2180.41 )
+texture = ExtResource( 15 )
+
+[node name="Asset 37" type="Sprite" parent="Prop"]
+position = Vector2( 4589.75, 2176.83 )
+texture = ExtResource( 16 )
+
+[node name="Asset 4" type="Sprite" parent="Prop"]
+position = Vector2( 5784.73, 2062.28 )
+texture = ExtResource( 12 )
+
+[node name="Asset 38" type="Sprite" parent="Prop"]
+position = Vector2( 7074.71, 2065.24 )
+texture = ExtResource( 12 )
+
+[node name="Asset 39" type="Sprite" parent="Prop"]
+position = Vector2( 7330.82, 1550.59 )
+texture = ExtResource( 19 )
+
+[node name="Asset 40" type="Sprite" parent="Prop"]
+position = Vector2( 8260.1, 1550.59 )
+texture = ExtResource( 20 )
+
+[node name="Asset 41" type="Sprite" parent="Prop"]
+position = Vector2( 7395.05, 1780.3 )
+scale = Vector2( 1, 1.06196 )
+texture = ExtResource( 21 )
+
+[node name="Asset 42" type="Sprite" parent="Prop"]
+position = Vector2( 7378.6, 1770.21 )
+scale = Vector2( 1, 1.06196 )
+texture = ExtResource( 22 )
+
+[node name="Asset 43" type="Sprite" parent="Prop"]
+position = Vector2( 8175.77, 1766.91 )
+texture = ExtResource( 23 )
+
+[node name="Asset 44" type="Sprite" parent="Prop"]
+position = Vector2( 8224.88, 1775.51 )
+texture = ExtResource( 24 )
+
+[node name="Asset 45" type="Sprite" parent="Prop"]
+position = Vector2( 9917.76, 2442.22 )
+texture = ExtResource( 12 )
+
+[node name="Asset 46" type="Sprite" parent="Prop"]
+position = Vector2( 9900.27, 2552.95 )
+texture = ExtResource( 17 )
+
+[node name="Asset 47" type="Sprite" parent="Prop"]
+position = Vector2( 9917.75, 2549.06 )
+texture = ExtResource( 14 )
+
+[node name="Asset 48" type="Sprite" parent="Prop"]
+position = Vector2( 10784.3, 2038.03 )
+texture = ExtResource( 21 )
+
+[node name="Asset 49" type="Sprite" parent="Prop"]
+position = Vector2( 10824.6, 2033.39 )
+texture = ExtResource( 22 )
+
+[node name="Asset 50" type="Sprite" parent="Prop"]
+position = Vector2( 10843.1, 2024.1 )
+texture = ExtResource( 25 )
+
+[node name="Asset 51" type="Sprite" parent="Prop"]
+position = Vector2( 10855.3, 1514.05 )
+texture = ExtResource( 26 )
+
+[node name="Asset 52" type="Sprite" parent="Prop"]
+position = Vector2( 10799.7, 1519.76 )
+texture = ExtResource( 21 )
+
+[node name="Asset 53" type="Sprite" parent="Prop"]
+position = Vector2( 10911, 759.644 )
+texture = ExtResource( 24 )
+
+[node name="Asset 54" type="Sprite" parent="Prop"]
+position = Vector2( 10961.7, 753.8 )
+texture = ExtResource( 26 )
+
+[node name="Asset 55" type="Sprite" parent="Prop"]
+position = Vector2( 11335.7, 615.49 )
+texture = ExtResource( 27 )
+
+[node name="Asset 56" type="Sprite" parent="Prop"]
+position = Vector2( 11364.9, 617.438 )
+texture = ExtResource( 26 )
+
+[node name="Asset 57" type="Sprite" parent="Prop"]
+position = Vector2( 428.361, 2161.86 )
+texture = ExtResource( 13 )
+
+[node name="Player" parent="." instance=ExtResource( 28 )]
+position = Vector2( 576.328, 2089.68 )
+scale = Vector2( 0.5, 0.5 )
+[connection signal="body_entered" from="TileMap/item/apple" to="TileMap/item/apple" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple16" to="TileMap/item/apple16" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple19" to="TileMap/item/apple19" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple2" to="TileMap/item/apple2" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple15" to="TileMap/item/apple15" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple23" to="TileMap/item/apple23" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple3" to="TileMap/item/apple3" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple14" to="TileMap/item/apple14" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple22" to="TileMap/item/apple22" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple4" to="TileMap/item/apple4" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple17" to="TileMap/item/apple17" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple21" to="TileMap/item/apple21" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple5" to="TileMap/item/apple5" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple18" to="TileMap/item/apple18" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple20" to="TileMap/item/apple20" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple6" to="TileMap/item/apple6" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple7" to="TileMap/item/apple7" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple8" to="TileMap/item/apple8" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple9" to="TileMap/item/apple9" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple10" to="TileMap/item/apple10" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple11" to="TileMap/item/apple11" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple12" to="TileMap/item/apple12" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple13" to="TileMap/item/apple13" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple24" to="TileMap/item/apple24" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple25" to="TileMap/item/apple25" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple26" to="TileMap/item/apple26" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple27" to="TileMap/item/apple27" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple28" to="TileMap/item/apple28" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple29" to="TileMap/item/apple29" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple30" to="TileMap/item/apple30" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple31" to="TileMap/item/apple31" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple32" to="TileMap/item/apple32" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple33" to="TileMap/item/apple33" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple34" to="TileMap/item/apple34" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple35" to="TileMap/item/apple35" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple36" to="TileMap/item/apple36" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple37" to="TileMap/item/apple37" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple38" to="TileMap/item/apple38" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple39" to="TileMap/item/apple39" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple40" to="TileMap/item/apple40" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple41" to="TileMap/item/apple41" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple42" to="TileMap/item/apple42" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple43" to="TileMap/item/apple43" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple44" to="TileMap/item/apple44" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple45" to="TileMap/item/apple45" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple46" to="TileMap/item/apple46" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple47" to="TileMap/item/apple47" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple48" to="TileMap/item/apple48" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple49" to="TileMap/item/apple49" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple50" to="TileMap/item/apple50" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple51" to="TileMap/item/apple51" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple52" to="TileMap/item/apple52" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple53" to="TileMap/item/apple53" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple54" to="TileMap/item/apple54" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple55" to="TileMap/item/apple55" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple56" to="TileMap/item/apple56" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple57" to="TileMap/item/apple57" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple58" to="TileMap/item/apple58" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple59" to="TileMap/item/apple59" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple60" to="TileMap/item/apple60" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple61" to="TileMap/item/apple61" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple62" to="TileMap/item/apple62" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple63" to="TileMap/item/apple63" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="TileMap/item/apple64" to="TileMap/item/apple64" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="Checkpoint" to="Checkpoint" method="_on_Checkpoint_body_entered"]
